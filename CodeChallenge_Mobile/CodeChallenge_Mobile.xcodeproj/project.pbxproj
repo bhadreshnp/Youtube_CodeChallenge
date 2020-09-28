@@ -17,6 +17,8 @@
 		B8289538251DEAA700CDD7FB /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8289537251DEAA700CDD7FB /* PlaylistController.swift */; };
 		B828953B251DEACF00CDD7FB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828953A251DEACF00CDD7FB /* LoginController.swift */; };
 		B828953D251DEB4100CDD7FB /* PlaylistDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828953C251DEB4100CDD7FB /* PlaylistDetailsController.swift */; };
+		B845BFB22521832600FDDDCD /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B845BFB12521832600FDDDCD /* DatabaseHelper.swift */; };
+		B845BFB52521916D00FDDDCD /* YoutubeDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = B845BFB42521916D00FDDDCD /* YoutubeDatabase.db */; };
 		B873946B251EF09A00FA0608 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B873946A251EF09A00FA0608 /* PlaylistCell.swift */; };
 		B873946D251EF3C800FA0608 /* PlaylistCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B873946C251EF3C800FA0608 /* PlaylistCoordinator.swift */; };
 		B8739470251EF42E00FA0608 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B873946F251EF42E00FA0608 /* LoginCoordinator.swift */; };
@@ -43,6 +45,8 @@
 		B8289537251DEAA700CDD7FB /* PlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
 		B828953A251DEACF00CDD7FB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B828953C251DEB4100CDD7FB /* PlaylistDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsController.swift; sourceTree = "<group>"; };
+		B845BFB12521832600FDDDCD /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		B845BFB42521916D00FDDDCD /* YoutubeDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = YoutubeDatabase.db; sourceTree = "<group>"; };
 		B873946A251EF09A00FA0608 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		B873946C251EF3C800FA0608 /* PlaylistCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCoordinator.swift; sourceTree = "<group>"; };
 		B873946F251EF42E00FA0608 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				B828951F251D5DB200CDD7FB /* AppDelegate.swift */,
 				B8739473251EFF9800FA0608 /* Constant.swift */,
 				B8739476251F217A00FA0608 /* Extensions.swift */,
+				B845BFB625219A2600FDDDCD /* SQLite Database */,
 				B8739475251F058F00FA0608 /* Coordinators */,
 				B8739469251EF05A00FA0608 /* TableViewCells */,
 				B828953F251DEB7600CDD7FB /* Login */,
@@ -117,6 +122,7 @@
 				B828952A251D5DB400CDD7FB /* LaunchScreen.storyboard */,
 				B828952D251D5DB400CDD7FB /* Info.plist */,
 				B8289533251DB6D800CDD7FB /* GoogleService-Info.plist */,
+				B845BFB42521916D00FDDDCD /* YoutubeDatabase.db */,
 			);
 			path = CodeChallenge_Mobile;
 			sourceTree = "<group>";
@@ -145,6 +151,14 @@
 				B828953A251DEACF00CDD7FB /* LoginController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B845BFB625219A2600FDDDCD /* SQLite Database */ = {
+			isa = PBXGroup;
+			children = (
+				B845BFB12521832600FDDDCD /* DatabaseHelper.swift */,
+			);
+			path = "SQLite Database";
 			sourceTree = "<group>";
 		};
 		B8739469251EF05A00FA0608 /* TableViewCells */ = {
@@ -229,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B828952C251D5DB400CDD7FB /* LaunchScreen.storyboard in Resources */,
+				B845BFB52521916D00FDDDCD /* YoutubeDatabase.db in Resources */,
 				B8289534251DB6D800CDD7FB /* GoogleService-Info.plist in Resources */,
 				B8289529251D5DB400CDD7FB /* Assets.xcassets in Resources */,
 				B8289527251D5DB200CDD7FB /* Main.storyboard in Resources */,
@@ -308,6 +323,7 @@
 				B8739470251EF42E00FA0608 /* LoginCoordinator.swift in Sources */,
 				B8289520251D5DB200CDD7FB /* AppDelegate.swift in Sources */,
 				B873947B251FBEA500FA0608 /* PlaylistDetailsCell.swift in Sources */,
+				B845BFB22521832600FDDDCD /* DatabaseHelper.swift in Sources */,
 				B828953D251DEB4100CDD7FB /* PlaylistDetailsController.swift in Sources */,
 				B873946D251EF3C800FA0608 /* PlaylistCoordinator.swift in Sources */,
 				B828953B251DEACF00CDD7FB /* LoginController.swift in Sources */,

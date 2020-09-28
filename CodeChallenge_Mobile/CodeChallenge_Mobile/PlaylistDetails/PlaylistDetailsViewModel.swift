@@ -35,11 +35,30 @@ class PlaylistDetailsViewModel {
     }
     var playlistId: String?
     var totalVideos: Int = 0
-    var listOfVideos: [GTLRYouTube_PlaylistItem] = []
+    var listOfVideos: [GTLRYouTube_PlaylistItem] = [] {
+        didSet {
+            saveIntoDatabase()
+        }
+    }
     var stateChangeHandler:((_ state: LoadingState) -> Void)?
+    private var database: DatabaseHelper = DatabaseHelper()
     
     init() {
         ytService.authorizer = Constant.current.authentication?.fetcherAuthorizer()
+    }
+    
+    private func saveIntoDatabase() {
+        guard let playlistId = playlistId else {
+            return
+        }
+        
+        for video in listOfVideos {
+            guard let videoId = video.contentDetails?.videoId else {
+                return
+            }
+            // TODO: - Do not add row here, if it already exist in database table.
+            database.insert(playlistId: playlistId, videoId: videoId)
+        }
     }
     
     func fetchNextPage() {
@@ -50,6 +69,8 @@ class PlaylistDetailsViewModel {
 extension PlaylistDetailsViewModel {
     func fetchPlaylist(with nextPageToken: String? = nil) {
         state = .loading
+        
+        // TODO: - Fetch all videos of playlist from database, if it already exist in database table, instead of API call.
         
         let query = GTLRYouTubeQuery_PlaylistItemsList.query(withPart: queryPart)
         query.playlistId = playlistId
